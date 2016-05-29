@@ -11,14 +11,10 @@
 			return
 
 	message = sanitize(message)
-
-	if(stat)
+	Mute() //Checks if you're muzzled, refer to mob/living/carbon/human/proc/Mute to find
+	if(stat)			//the list of muzzling objects
 		if(stat == 2)
 			return say_dead(message)
-		return
-
-	if (istype(src.wear_mask, /obj/item/clothing/mask/muzzle))
-		src << "<span class='danger'>You're muzzled and cannot speak!</span>"
 		return
 
 	var/message_mode = parse_message_mode(message, "headset")

@@ -46,6 +46,18 @@
 	spawn( 50 )
 		if( mind && !mind.character )
 			mind.character = character
+/mob/living/carbon/human/proc/Mute(src.wear_mask)
+		src << "Calling Mute()"
+		var/list/muzzles = new
+		muzzles += new /obj/item/clothing/mask/tape_muzzle
+		muzzles += new /obj/item/clothing/mask/muzzle
+		muzzles += new /obj/item/weapon/ducttape
+		if(src.wear_mask in muzzles)
+				src << "<span class='danger'>You're muzzled and cannot speak!</span>"
+
+
+
+
 
 /mob/living/carbon/human/Move(NewLoc, direct)
 	..()

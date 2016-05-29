@@ -5,13 +5,11 @@
 	icon_state = "taperoll"
 	w_class = 1
 
-/* -- Disabled for now until it has a use --
 /obj/item/weapon/tape_roll/attack_self(mob/user as mob)
 	user << "You remove a length of tape from [src]."
 
-	var/obj/item/weapon/ducttape/tape = new()
-	user.put_in_hands(tape)
-*/
+	var/obj/item/clothing/mask/tape_muzzle = new()
+	user.put_in_hands(tape_muzzle)
 
 /obj/item/weapon/tape_roll/proc/stick(var/obj/item/weapon/W, mob/user)
 	if(!istype(W, /obj/item/weapon/paper))
@@ -29,7 +27,7 @@
 	icon_state = "tape"
 	w_class = 1
 	layer = 4
-	anchored = 1 //it's sticky, no you cant move it
+	flags = MASKCOVERSMOUTH
 
 	var/obj/item/weapon/stuck = null
 

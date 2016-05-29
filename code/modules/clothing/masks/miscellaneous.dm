@@ -101,3 +101,16 @@
 	w_class = 2
 	var/voicechange = 0
 	siemens_coefficient = 0.9
+
+obj/item/clothing/mask/tape_muzzle
+	name = "makeshift muzzle"
+	desc = "To stop that awful noise."
+	icon_state = "tape_muzzle"
+	item_state = "tape_muzzle"
+	flags = MASKCOVERSMOUTH
+	body_parts_covered = 0
+	w_class = 2
+	gas_transfer_coefficient = 0.90
+
+
+
