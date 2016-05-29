@@ -1,3 +1,4 @@
+var/list/muzzles = list()
 /mob/living/carbon/human
 	name = "unknown"
 	real_name = "unknown"
@@ -46,12 +47,11 @@
 	spawn( 50 )
 		if( mind && !mind.character )
 			mind.character = character
+
 /mob/living/carbon/human/proc/Mute(src.wear_mask)
-		src << "Calling Mute()"
-		var/list/muzzles = new
-		muzzles += new /obj/item/clothing/mask/tape_muzzle
-		muzzles += new /obj/item/clothing/mask/muzzle
-		muzzles += new /obj/item/weapon/ducttape
+		muzzles.Add(/obj/item/clothing/mask/tape_muzzle)
+		muzzles.Add(/obj/item/clothing/mask/muzzle)
+		muzzles.Add(/obj/item/weapon/ducttape)
 		if(src.wear_mask in muzzles)
 				src << "<span class='danger'>You're muzzled and cannot speak!</span>"
 
